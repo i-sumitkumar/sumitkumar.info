@@ -6,7 +6,7 @@ function toggleMenu() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  const jobTitles = ["Software Developer", "Data Engineer", "Data Analyst"];
+  const jobTitles = ["Software Developer", "Data Analyst","Security Analyst"];
   const textElement = document.querySelector('.section__text__p2');
   let currentIndex = 0;
 

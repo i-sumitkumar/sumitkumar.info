@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumit Kumar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+  <link rel="stylesheet" href="dark-mode.css" />
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/jpeg" href="assets/favicon.ico"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <script src="https://kit.fontawesome.com/f7bbeb4fcb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <a class="logo" href="#">Sumit Kumar</a>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certification">Certification</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Sumit Kumar</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#certification" onclick="toggleMenu()">Certification</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="profile__section__pic-container">
+      <img class = "profile-pic" src="assests/dp.gif" alt="Sumit Kumar profile picture" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="name">Sumit Kumar</h1>
+      <p class="section__text__p2">Software Developer</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('https://drive.google.com/file/d/1_WYT58JRY7yRGpwfe53m_3CvYdU9A_nc/view?usp=sharing')">
+          Download CV
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='#contact'">
+          Contact Info
+        </button>
+      </div>
+      <div class="social-icons">
+        <div id="socials-container">
+          <a onclick="location.href='https://www.linkedin.com/in/isumit-kumar/'">
+            <i class="fa-brands fa-linkedin" style="font-size: 1.9em;"></i>
+          </a>
+          <a onclick="location.href='https://github.com/i-sumitkumar'">
+            <i class="fa-brands fa-github" style="font-size: 1.9em;"></i>
+          </a>
+          <a onclick="location.href='https://www.youtube.com/@CanadianJunction'">
+            <i class="fa-brands fa-youtube" style="font-size: 1.9em;"></i>
+          </a>
+          <a onclick="location.href='https://www.instagram.com/_sk.rajput/'">
+            <i class="fa-brands fa-instagram" style="font-size: 1.9em;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="section-title">About Me</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="assests/mypic.jpg" alt="Profile picture" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <div class="about-section-containers">
+          <div class="details-container">
+            <img src="assests/experience.png" alt="Experience icon" class="icon" style="font-size: 1.9rem;" />
+            <h3>Experience</h3>
+            <p>2+ years <br />Software Engineer <br /> QA Analyst <br />Web Developer</p>
+          </div>
+          <div class="details-container">
+            <i class="fa-solid fa-graduation-cap" style="font-size: 1.9rem;"></i>
+            <h3>Education</h3>
+            <p>Masters Degree(Software Engineering) ~ Canada <br>Bachelors Degree(Chemical Engineering) ~ India<br />Diploma(Computer Science & Engineering) ~ India<br /></p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>	  
+            Innovative, Detail-Oriented, Responsive. <br><br> Ready to transform ideas into reality through code!
+            <br> <br>
+            Passionate Software Developer and Full Stack Developer, actively pursuing a Master’s Degree in Software Engineering.
+		  	Proficient in C++, C#, Python, and Java, with a solid background in web technologies (HTML, CSS, REST API) and various testing frameworks (Selenium, Junit, PyTest).
+		  	Demonstrated skills in developing robust applications, optimizing database queries, and implementing CI/CD pipelines to deliver high-quality software solutions. 
+		  	Fluent in English and French, I am eager to contribute my expertise and learn from industry leaders.
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="assests/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#skills'" />
+  </section>
+  <section id="skills">
+    <p class="section__text__p1">Take a look over my</p>
+    <h1 class="section-title">Skills</h1>
+    <div class="skills-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <h2 class="skills-sub-title">Languages & Libraries</h2>
+          <div class="article-container">
+            <article>
+              <img src="assests/python.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Python</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/spark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Spark</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/sql.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>SQL</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/javascript.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>JavaScript</h3>
+                <p>Basic</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/html.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>HTML</h3>
+                <p>Basic</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/css.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>CSS</h3>
+                <p>Basic</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/matplotlib.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Matplotlib</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/nlp.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>NLP</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="details-container">
+          <h2 class="skills-sub-title">Cloud Computing & Frameworks</h2>
+          <div class="article-container">
+            <article>
+              <img src="assests/aws.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>AWS</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/snowflake.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Snowflake</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/pytorch.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Pytorch</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/jenkins.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Jenkins</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/git.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Git</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/docker.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Docker</h3>
+                <p>Basic</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/bi.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>PowerBI</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="assests/springboot.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>SpringBoot</h3>
+                <p>Basic</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="assests/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#experience'" />
+  </section>
+  <section id="experience">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="section-title">Experience</h1>
+    <div class="experience-container">
+      <div class="exp-details-container">
+        <div class="experience-img">
+          <img src="assests/evolverttech.jpg" alt="Experience 2" class="company-img" />
+        </div>
+        <h3 class="exp-sub-title">EvolverTech</h3>
+        <h4 class="experience-location">Jalandhar, India</h4>
+        <p>
+          Full Stack Developer <br> (July 2021 - Nov 2022)
+        </p>
+      </div>
+
+      <div class="exp-details-container">
+        <div class="experience-img">
+          <img src="assests/Rabrojpeg.jpeg" alt="Experience 1" class="company-img" />
+        </div>
+        <h3 class="exp-sub-title">Rabro</h3>
+        <h4 class="experience-location">Jalandhar, India</h4>
+        <p>
+          Software Engineering Intern <br>(Aug 2021 - June 2022)
+        </p>
+      </div>
+    </div>
+	  
+    <img src="assests/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#certification'" />
+  </section>
+	<section id="certification">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="section-title">Certifications</h1>
+    <div class="certification-container">
+      <div class="cert-details-container">
+        <div class="certification-img">
+          <img src="assests/az900.png" alt="Experience 2" class="company-img" />
+        </div>
+        <h3 class="cert-sub-title">Microsoft Azure Fundamentals</h3>
+        <h4 class="certification-location">AZ-900</h4>
+        <p>
+			Registration ID: ITS-8494242 <br> Exam reference a 47222352
+        </p>
+      </div>
+    </div>
+	  <img src="assests/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#projects'" />
+  </section>
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="section-title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="projects-container color-container">
+          <div class="article-container">
+            <img src="assests/warzone.png" alt="Project 1" class="project-img" />
+          </div>
+          <h2 class="project-title">WARZONE</h2>
+          <div class="btn-container">
+            <button class="new_btn" onclick="location.href='https://github.com/Rhmarwaha/SOEN_6441_RISK.git'">
+              Github
+            </button>
+          </div>
+        </div>
+		  <div class="projects-container color-container">
+          <div class="article-container">
+            <img src="assests/Opensource.png" alt="Project 1" class="project-img" />
+          </div>
+          <h2 class="project-title">Open Street Map</h2>
+          <div class="btn-container">
+            <button class="new_btn" onclick="location.href='https://github.com/rilling/OSMDashboardConcordia.git'">
+              Github
+            </button>
+          </div>
+        </div>
+        <div class="projects-container color-container">
+          <div class="article-container">
+            <img src="assests/netflix.jpeg" alt="Project 2" class="project-img" />
+          </div>
+          <h2 class="project-title">Netflix Recommendation System</h2>
+          <div class="btn-container">
+            <button class="new_btn" onclick="location.href='https://github.com/Content-Based-Recommnedation-System'">
+              Github
+            </button>
+          </div>
+        </div>
+        <div class="projects-container color-container">
+          <div class="article-container">
+            <img src="assests/stress.jpg" alt="Project 3" class="project-img" />
+          </div>
+          <h2 class="project-title">Human Stress Detection</h2>
+          <div class="btn-container">
+            <button class="new_btn" onclick="location.href='https://github.com/i-sumitkumar/Concordia.git'">
+              Github
+            </button>
+          </div>
+        </div>
+      </div>
+		
+    </div>
+    <img src="assests/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
+  </section>
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="section-title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <p>
+          <a href="mailto:sehgalvaibhav1999@gmail.com">
+            <i class="fa-solid fa-envelope" style="font-size: 1em; margin-right: 0.2em;"></i>
+            i.sumitkumar@outlook.com
+          </a>
+        </p>
+      </div>
+      <div class="contact-info-container">
+        <p>
+          <a onclick="location.href='https://www.linkedin.com/in/isumit-kumar/'">
+            <i class="fa-brands fa-linkedin" style="font-size: 1em; margin-right: 0.2em;"></i>
+            LinkedIn
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certification">Certification</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p>Copyright &#169; 2024 Sumit Kumar. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js">
+
+  </script>
+
+</body>
+
+</html>

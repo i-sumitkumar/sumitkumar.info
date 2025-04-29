@@ -2,6 +2,17 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 1) ensure images never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* then the rest of your rules… */
 * {
   margin: 0;
@@ -21,13 +32,14 @@ h1 {
   color: #333; 
 
 }
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-  /* …etc… */
-}
 
+.icon.arrow {
+  /* remove absolute positioning entirely */
+  position: static;
+  display: block;
+  margin: 2rem auto;  /* centers horizontally and spacing above/below */
+  cursor: pointer;
+}
 
 h2 {
   font-size: 24px; 
@@ -52,6 +64,8 @@ a,
 nav,
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 nav {
@@ -138,7 +152,6 @@ a:hover {
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 .menu-links li {
   list-style: none;
@@ -215,9 +228,15 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 450px;
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   margin: auto 0;
+
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .section-title{
@@ -597,12 +616,7 @@ article .icon {
 }
 
 /* 7. Projects grid & card layout */
-.projects-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-}
+
 
 .project-card {
   background: #fff;
@@ -663,8 +677,8 @@ footer p {
 .section-container,
 .experience-container,
 .about-containers,
-.article-container,
-.projects-list {
+.article-container
+{
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;            /* or whatever spacing you prefer */

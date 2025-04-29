@@ -164,11 +164,8 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;
-  margin: 0 auto;         /* center on all screen sizes */
-  padding-left: 1rem;     /* small gutter on mobile */
-  padding-right: 1rem;
-  max-width: 1200px;      /* caps width on large screens */
+  padding-top: 4vh;       /* keep your existing top padding */
+  margin: 0 1rem;         /* small gutters on mobile/tablet */
   box-sizing: border-box;
   min-height: fit-content;
 }

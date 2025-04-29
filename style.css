@@ -227,15 +227,8 @@ section {
 }
 
 .section__pic-container {
-  display: flex;
   width: 100%;
-  max-width: 450px;
-  height: auto;
-  margin: auto 0;
-
-  width: 100%;
-  max-width: 450px;
-  height: auto;
+  max-width: 300px; /* default cap on small screens */
   margin: 0 auto;
 }
 
@@ -524,7 +517,25 @@ article .icon {
 .article-container div {
   width: 150px;
 }
+.section__pic-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
+/* Tablet and up: allow a bit more room */
+@media (min-width: 600px) {
+  .section__pic-container {
+    max-width: 450px;
+  }
+}
+
+/* Desktop and up: keep it from growing past your original design */
+@media (min-width: 1024px) {
+  .section__pic-container {
+    max-width: 600px;
+  }
+}
 .experience-img {
   display: flex;
   /* gap: 0.5rem; */

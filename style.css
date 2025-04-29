@@ -21,6 +21,12 @@ h1 {
   color: #333; 
 
 }
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+  /* …etc… */
+}
 
 
 h2 {
@@ -128,7 +134,12 @@ a:hover {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
-
+/* prevent any accidental horizontal overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 .menu-links li {
   list-style: none;
 }
@@ -292,9 +303,10 @@ nav#hamburger-nav {
   height: 2rem;
 }
 .icon.arrow {
-  position: relative;     /* no negative offset */
   display: block;
-  margin: 2rem auto;      /* centered under each section */
+  margin: 2rem auto;    /* vertically space + center horizontally */
+  width: auto;
+  height: auto;
   cursor: pointer;
 }
 .section-container {
@@ -648,5 +660,14 @@ footer {
 footer p {
   text-align: center;
 }
-
+.section-container,
+.experience-container,
+.about-containers,
+.article-container,
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;            /* or whatever spacing you prefer */
+  justify-content: center;
+}
 

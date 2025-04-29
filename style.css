@@ -201,11 +201,16 @@ section {
   background-color: #f2f2f2;
   border-radius: 50%;
 }
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 450px;
+  width: 450px;
   margin: auto 0;
 }
 

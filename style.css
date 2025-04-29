@@ -164,8 +164,11 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;       /* keep your existing top padding */
-  margin: 0 1rem;         /* small gutters on mobile/tablet */
+  padding-top: 4vh;
+  margin: 0 auto;         /* center on all screen sizes */
+  padding-left: 1rem;     /* small gutter on mobile */
+  padding-right: 1rem;
+  max-width: 1200px;      /* caps width on large screens */
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -382,11 +385,6 @@ nav#hamburger-nav {
   border-radius: 1.5rem;
 }
 
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
 
 .details-container {
   padding: 1.5rem;
@@ -403,9 +401,11 @@ nav#hamburger-nav {
 }
 
 .section__pic-container {
-  height: 450px;
-  width: 450px;
-  margin: auto 0;
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin: auto;
 }
 
 .text-container{

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM AGENT  | Sumit Kumar Projects</title>
+  <!-- your main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- project-page overrides -->
+  <style>
+    /* Container to center content */
+    #project-page {
+      padding: 4rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #project-page h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    /* Hero image */
+    .project-hero {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    /* Description */
+
+    .project-desc ul {
+      padding-left: 3.5rem;         /* Indent from the left */
+      margin-bottom: 2rem;
+      line-height: 1.8;             /* Space between lines */
+      font-size: 1.05rem;
+      color: #333;
+      list-style-type: disc;        /* Classic filled bullets */
+    }
+
+    .project-desc li {
+      margin-bottom: 0.5rem;        /* Space between list items */
+    }
+    /* Embed report */
+    #project-report {
+      margin-bottom: 2rem;
+    }
+    #project-report h2 {
+      font-size: 1.75rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    #project-report iframe {
+      width: 100%;
+      height: 50rem;
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    /* GitHub button */
+    .btn-github {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #24292e;
+      color: #fff;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 200ms;
+    }
+    .btn-github:hover {
+      background: #3c4146;
+    }
+    /* Ensure page scrolls under nav/footer */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- reuse your nav -->
+  <nav id="desktop-nav">
+    <a class="logo" href="index.html">Sumit Kumar</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="project-page">
+    <h1>AutoCIRepair: Multi-Agent CI Build Repair</h1>
+
+    <img src="assets/AgentLLM.png"
+         alt="Multi-Agent CI Build Repair"
+         class="project-hero" />
+
+    <div class="project-desc">
+      <p>
+        <strong>AutoCIRepair</strong> is a novel multi-agent system that automates the diagnosis and repair of Continuous Integration (CI) build failures. Built using LLM-powered agents, the system targets real-world repository-level CI workflows.
+      </p>
+      <ul>
+        <li>Uses GPT-4o-mini and LangChain to orchestrate three agents: Error Extractor, Debugger, and Developer</li>
+        <li>Analyzes raw logs, diffs, and call graphs to localize and fix CI failures</li>
+        <li>Validates patches using real-time GitHub Actions reruns</li>
+        <li>Tested on the <a href="https://huggingface.co/datasets/JetBrains-Research/lca-ci-builds-repair" target="_blank">LCA CI Build Repair Benchmark</a> with 68 real-world failure cases</li>
+      </ul>
+    </div>
+
+    <section id="project-report">
+      <h2>Read Full Technical Report</h2>
+      <iframe
+              src="https://drive.google.com/file/d/19WUc6TrAxE8xwKC08mjtxgpuN7xAd14-/preview"
+              allowfullscreen>
+      </iframe>
+    </section>
+
+    <div style="text-align:center;">
+      <a
+              rel="noopener"
+              class="btn-github"
+              href="/mnt/data/CI_Build_Repair_paper.pdf"
+              download>
+        Download Full Paper (PDF)
+      </a>
+    </div>
+  </main>
+
+  <!-- reuse your footer -->
+  <footer>
+    <div class="nav-links-container">
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <p>© 2025 Sumit Kumar. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

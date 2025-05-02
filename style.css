@@ -742,7 +742,7 @@ article .icon {
 /* Updated Projects Container */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktops */
+  grid-template-columns: repeat(4, 1fr); /* 3 columns for desktops */
   gap: 20px;
   justify-content: center;
   padding: 20px;

@@ -869,7 +869,7 @@ article .icon {
 }
 
 #certification-container img {
-  height: 150px;
+  height: 170px;  /* was 150px */
   width: auto;
   object-fit: contain;
   margin-bottom: 1rem;

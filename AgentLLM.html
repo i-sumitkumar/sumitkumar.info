@@ -1,113 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LLM AGENT  | Sumit Kumar Projects</title>
-  <!-- your main stylesheet -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>AutoCIRepair | Sumit Kumar Projects</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- project-page overrides -->
+  <link rel="stylesheet" href="mediaqueries.css" />
   <style>
-    /* Container to center content */
-    #project-page {
-      padding: 4rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    #project-page h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    /* Hero image */
-    .project-hero {
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
       width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: auto;
       display: block;
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 12px;
     }
-    /* Description */
-
-    .project-desc ul {
-      padding-left: 3.5rem;         /* Indent from the left */
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .project-hero {
+      max-width: 100%;
+      height: auto;
+      width: 1000px;
+      border-radius: 12px;
       margin-bottom: 2rem;
-      line-height: 1.8;             /* Space between lines */
-      font-size: 1.05rem;
-      color: #333;
-      list-style-type: disc;        /* Classic filled bullets */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
     }
-
-    .project-desc li {
-      margin-bottom: 0.5rem;        /* Space between list items */
-    }
-    /* Embed report */
-    #project-report {
-      margin-bottom: 2rem;
-    }
-    #project-report h2 {
-      font-size: 1.75rem;
-      text-align: center;
-      margin-bottom: 1rem;
+    .project-hero:hover {
+      transform: scale(1.02);
+      cursor: pointer;
     }
     #project-report iframe {
       width: 100%;
-      height: 50rem;
+      height: 80vh;
+      max-height: 700px;
       border: none;
       border-radius: 0.5rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    /* GitHub button */
-    .btn-github {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: #24292e;
-      color: #fff;
-      border-radius: 0.5rem;
-      text-decoration: none;
+    .project-desc.text-container {
+      max-width: 850px;
+      width: 100%;
+      padding: 0 1rem;
+      margin: 2rem auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+
+    .project-desc.text-container p {
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-indent: 0rem;        /* no indent */
+      padding-left: 0.5rem;     /* slight left alignment */
+    }
+
+    .project-desc.text-container ul {
+      padding-left: 4.5rem;     /* deeper indent for bullets */
+      list-style-type: disc;
+    }
+
+    .project-desc.text-container li {
+      margin-bottom: 0.7rem;
+      text-indent: 0.5rem;      /* optional fine alignment of bullet text */
+    }
+
+    .project-desc.text-container a {
+      color: var(--link-color);
+      text-decoration: underline;
+      text-underline-offset: 3px;
       font-weight: 500;
-      transition: background 200ms;
     }
-    .btn-github:hover {
-      background: #3c4146;
+
+    .project-desc.text-container a:hover {
+      color: var(--link-hover-color);
     }
-    /* Ensure page scrolls under nav/footer */
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+
+
+    @media (max-width: 768px) {
+      .project-hero {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+      #project-report iframe {
+        height: 60vh;
+      }
     }
-    main {
-      flex: 1;
+    .download-btn-wrapper {
+      text-align: center;
+      margin: 2rem auto 3rem auto;
     }
+
+    @media (min-width: 768px) {
+      .download-btn-wrapper {
+        margin-top: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .download-btn-wrapper {
+        margin-top: -4rem;
+      }
+    }
+
   </style>
 </head>
-
 <body>
-  <!-- reuse your nav -->
-  <nav id="desktop-nav">
-    <a class="logo" href="index.html">Sumit Kumar</a>
-    <ul class="nav-links">
+<nav id="desktop-nav">
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <a class="logo" href="index.html">Sumit Kumar</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<nav id="hamburger-nav">
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle-1">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="hamburger-menu">
+    <div class="hamburger-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="menu-links">
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#skills">Skills</a></li>
       <li><a href="index.html#experience">Experience</a></li>
       <li><a href="index.html#projects">Projects</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-  </nav>
-
-  <main id="project-page">
+  </div>
+</nav>
+<main id="project-page">
+  <section class="section-container" style="flex-direction: column; align-items: center;">
     <h1>AutoCIRepair: Multi-Agent CI Build Repair</h1>
-
-    <img src="assets/AgentLLM.png"
-         alt="Multi-Agent CI Build Repair"
-         class="project-hero" />
-
-    <div class="project-desc">
-      <p>
-        <strong>AutoCIRepair</strong> is a novel multi-agent system that automates the diagnosis and repair of Continuous Integration (CI) build failures. Built using LLM-powered agents, the system targets real-world repository-level CI workflows.
-      </p>
+    <img src="assets/AgentLLM.png" alt="Multi-Agent CI Build Repair" class="project-hero" id="zoom-img">
+    <div class="project-desc text-container">
+      <p><strong>AutoCIRepair</strong> is a novel multi-agent system that automates the diagnosis and repair of Continuous Integration (CI) build failures. Built using LLM-powered agents, the system targets real-world repository-level CI workflows.</p>
       <ul>
         <li>Uses GPT-4o-mini and LangChain to orchestrate three agents: Error Extractor, Debugger, and Developer</li>
         <li>Analyzes raw logs, diffs, and call graphs to localize and fix CI failures</li>
@@ -115,38 +178,54 @@
         <li>Tested on the <a href="https://huggingface.co/datasets/JetBrains-Research/lca-ci-builds-repair" target="_blank">LCA CI Build Repair Benchmark</a> with 68 real-world failure cases</li>
       </ul>
     </div>
-
     <section id="project-report">
-      <h2>Read Full Technical Report</h2>
-      <iframe
-              src="https://drive.google.com/file/d/19WUc6TrAxE8xwKC08mjtxgpuN7xAd14-/preview"
-              allowfullscreen>
-      </iframe>
+      <h2 class="section-title">Read Full Technical Report</h2>
+      <iframe src="https://drive.google.com/file/d/19WUc6TrAxE8xwKC08mjtxgpuN7xAd14-/preview" allowfullscreen></iframe>
     </section>
-
-    <div style="text-align:center;">
-      <a
-              rel="noopener"
-              class="btn-github"
-              href="/mnt/data/CI_Build_Repair_paper.pdf"
-              download>
+    <div class="download-btn-wrapper">
+      <a rel="noopener" class="new_btn" href="assets/CI_Build_Repair_paper.pdf" download>
         Download Full Paper (PDF)
       </a>
     </div>
-  </main>
 
-  <!-- reuse your footer -->
-  <footer>
-    <div class="nav-links-container">
-      <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </div>
-    <p>© 2025 Sumit Kumar. All Rights Reserved.</p>
-  </footer>
+  </section>
+</main>
+<footer>
+  <div class="nav-links-container">
+    <ul class="nav-links" style="flex-wrap: wrap; justify-content: center;">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+  <p style="text-align:center">© 2025 Sumit Kumar. All Rights Reserved.</p>
+</footer>
+
+<!-- Modal for zoom image -->
+<div id="image-modal" class="modal">
+  <span class="modal-close" id="close-modal">&times;</span>
+  <img class="modal-content" id="modal-img">
+</div>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('zoom-img').addEventListener('click', function () {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    modal.style.display = 'block';
+    modalImg.src = this.src;
+  });
+  document.getElementById('close-modal').addEventListener('click', function () {
+    document.getElementById('image-modal').style.display = 'none';
+  });
+  window.addEventListener('click', function (e) {
+    const modal = document.getElementById('image-modal');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
 </body>
 </html>

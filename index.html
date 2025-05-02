@@ -34,6 +34,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#certification">Certification</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -57,6 +58,7 @@
       <li><a href="#about" onclick="toggleMenu()">About</a></li>
       <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
       <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+      <li><a href="#certification" onclick="toggleMenu()">Certification</a></li>
       <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
       <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
     </div>
@@ -101,7 +103,7 @@
   <h1 class="section-title">About Me</h1>
   <div class="section-container">
     <div class="section__pic-container">
-      <img src="./assets/mypic.JPG" alt="Profile picture" class="about-pic" />
+      <img src="./assets/mypic.jpg" alt="Profile picture" class="about-pic" />
     </div>
     <div class="about-details-container">
       <div class="about-section-containers">
@@ -131,6 +133,8 @@
     </div>
   </div>
 </section>
+
+
 <section id="skills">
   <p class="section__text__p1">Take a look over my</p>
   <h1 class="section-title">Skills</h1>
@@ -183,6 +187,8 @@
           </article>
         </div>
       </div>
+
+
 
 
       <div class="details-container">
@@ -365,6 +371,13 @@
 </section>
 
 
+<section id="certification">
+  <p class="section__text__p1">Explore My</p>
+  <h1 class="section-title">Certification</h1>
+  <div class="certification-container" id="certification-container">
+  </div>
+</section>
+
 
 <section id="contact">
   <p class="section__text__p1">Get in Touch</p>
@@ -394,10 +407,12 @@
 <script src="script.js">
 
 </script>
-
+<div id="img-modal" class="modal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modal-img">
+</div>
 </body>
 </html> 
-
 
 
 

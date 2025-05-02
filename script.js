@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 // Ensure smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function addExperience({ company, location, duration, title, image }) {
       // Check if the experience already exists to prevent duplication
       if (document.querySelector(`[data-company="${company}"]`)) return;
-      
+
       const experienceDiv = document.createElement('div');
       experienceDiv.className = 'experience-item';
       experienceDiv.setAttribute('data-company', company); // Add unique identifier to avoid duplicates
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <p class="experience-duration">${duration}</p>
           </div>
       `;
-      
+
       experienceContainer.appendChild(experienceDiv);
   }
 
@@ -180,9 +181,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
   );
 
-
 });
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const certificationContainer = document.getElementById('certification-container');
 
+  // Function to render each certification item with image, title, and credential ID
+  function addCertification({ title, image, credentialId }) {
+    if (document.querySelector(`[data-title="${title}"]`)) return;
+
+    const certificationDiv = document.createElement('div');
+    certificationDiv.className = 'certification-item';
+    certificationDiv.setAttribute('data-title', title);
+
+    certificationDiv.innerHTML = `
+      <div class="exp-details-container">
+        <div class="certification-img">
+          <img src="${image}" alt="Certification Image" class="company-img cert-click" data-full="${image}" />
+        </div>
+        <p class="certification-title">${title}</p>
+        ${credentialId ? `<p class="credential-id">Credential ID: ${credentialId}</p>` : ''}
+      </div>
+    `;
+
+    certificationContainer.appendChild(certificationDiv);
+  }
+
+  // Add certifications with credential IDs
+  addCertification({
+    title: 'Azure Certified Cloud Practitioner',
+    image: './assets/az900.png',
+    credentialId: ''
+  });
+
+  addCertification({
+    title: 'Certified Scrum Master',
+    image: './assets/Scrummaster.jpg',
+    credentialId: ''
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Open modal on image click
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('cert-click')) {
+      const modal = document.getElementById('img-modal');
+      const modalImg = document.getElementById('modal-img');
+      modal.style.display = "block";
+      modalImg.src = e.target.getAttribute('data-full');
+    }
+  });
+
+  // Close modal when clicking the X
+  const closeBtn = document.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      document.getElementById('img-modal').style.display = "none";
+    });
+  }
+
+  // Close modal when clicking outside the image
+  window.addEventListener('click', function (event) {
+    const modal = document.getElementById('img-modal');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
